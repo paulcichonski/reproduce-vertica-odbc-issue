@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  reproduce:
+    privileged: true
+    build: .
+
+  vertica:
+    image: jbfavre/vertica:9.0.1-5_debian-8
+    volumes:
+    - ./vertica/vertica.sql:/docker-entrypoint-initdb.d/vertica.sql
